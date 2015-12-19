@@ -57,18 +57,25 @@ jmp_force = 7;
             <string>/// Movement, Collision
 
 // Key PRESSES
+// Left
 if(keyboard_check_pressed(ord('A'))){
   hspd -= spd;
 }
+// Right
 if(keyboard_check_pressed(ord('D'))){
   hspd += spd;
 }
+// Up
 if(keyboard_check_pressed(ord('W'))){
-  show_debug_message("Jump!");
-  vspd -= jmp_force;
+  show_debug_message("Up!");
 }
+// Down
 if(keyboard_check_pressed(ord('S'))){
   show_debug_message("Down!");
+}
+// Space / Jump
+if(keyboard_check_pressed(vk_space)){
+  vspd -= jmp_force;
 }
 
 // Key RELEASES
@@ -79,10 +86,10 @@ if(keyboard_check_released(ord('D'))){
   hspd -= spd;
 }
 
-// subtract gravity from vspd
+
+
+// add gravity from vspd
 vspd += global.GRAV;
-
-
 
 
 // horizontal collision
