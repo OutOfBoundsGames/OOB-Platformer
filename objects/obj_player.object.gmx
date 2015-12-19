@@ -28,7 +28,7 @@
             <string>/// Initialize player vars
 
 // Velocity vars
-spd = 2;
+spd = 3;
 hspd = 0;
 vspd = 0;
 

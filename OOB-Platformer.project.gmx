@@ -13,7 +13,8 @@
       <sprite>sprites\spr_floor</sprite>
     </sprites>
     <sprites name="Interactive">
-      <sprite>sprites\spr_trampoline</sprite>
+      <sprite>sprites\spr_bumper_UP</sprite>
+      <sprite>sprites\spr_bumper_DOWN</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -28,7 +29,8 @@
       <object>objects\obj_floor</object>
     </objects>
     <objects name="Interactive">
-      <object>objects\obj_trampoline</object>
+      <object>objects\obj_bumper_UP</object>
+      <object>objects\obj__bumper_DOWN</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -56,8 +56,13 @@
     <instance objName="obj_floor" x="640" y="96" name="inst_5525F2BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor" x="384" y="288" name="inst_A8F4FC6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_floor" x="448" y="224" name="inst_6714F94A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trampoline" x="544" y="336" name="inst_83F75ED0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trampoline" x="256" y="224" name="inst_B3980DDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bumper_UP" x="544" y="336" name="inst_83F75ED0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bumper_UP" x="256" y="224" name="inst_B3980DDB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floor" x="64" y="480" name="inst_9B32C084" locked="0" code="" scaleX="24" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_floor" x="64" y="192" name="inst_37AA6E38" locked="0" code="" scaleX="1" scaleY="9" colour="4294967295" rotation="0"/>
+    <instance objName="obj_bumper_UP" x="96" y="480" name="inst_2EEC625A" locked="0" code="" scaleX="11.5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj__bumper_DOWN" x="160" y="384" name="inst_C67D31CD" locked="0" code="" scaleX="8.5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj__bumper_DOWN" x="96" y="192" name="inst_F2F7E570" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
