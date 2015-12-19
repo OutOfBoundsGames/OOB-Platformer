@@ -89,7 +89,9 @@ if(keyboard_check_pressed(vk_space)){
   if(grounded){
     grounded = false;
     vspd = -jmp_force;
-  }else if(airjumps &lt; max_airjumps){
+  /* Only use up an airjump if we can increase our velocity.
+     If our upwards velocity is currently greater than our jmp_force, don't use the airjump */
+  }else if(airjumps &lt; max_airjumps &amp;&amp; vspd &gt; -jmp_force){
     airjumps += 1;
     vspd = -jmp_force;
   }
