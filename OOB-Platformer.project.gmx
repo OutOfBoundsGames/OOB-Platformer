@@ -5,9 +5,30 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprites name="Player">
+      <sprite>sprites\spr_player</sprite>
+    </sprites>
+    <sprites name="Terrain">
+      <sprite>sprites\spr_floor</sprite>
+    </sprites>
+  </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\obj_player</object>
+    <objects name="System">
+      <object>objects\obj_Gamestate</object>
+    </objects>
+    <objects name="Terrain">
+      <object>objects\obj_solid</object>
+      <object>objects\obj_floor</object>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_initialize</room>
+    <room>rooms\rm_test</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
