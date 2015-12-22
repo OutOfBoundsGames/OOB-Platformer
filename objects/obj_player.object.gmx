@@ -76,20 +76,16 @@ grounded = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Movement, Collision
+            <string>/// Key Input Handler
 
-// Key PRESSES
+
 // Left
 if(keyboard_check_pressed(ord('A'))){
   hspd -= spd;
-  image_xscale = -1;
-  if(sprite_index != spr_player_run &amp;&amp; grounded) sprite_index = spr_player_run;
 }
 // Right
 if(keyboard_check_pressed(ord('D'))){
   hspd += spd;
-  image_xscale = 1;
-  if(sprite_index != spr_player_run &amp;&amp; grounded) sprite_index = spr_player_run;
 }
 // Up
 if(keyboard_check_pressed(ord('W'))){
@@ -105,6 +101,8 @@ if(keyboard_check_pressed(vk_space)){
   if(grounded){
     grounded = false;
     vspd = -jmp_force;
+    state = ePlayer_states.jumping;
+    
   /* Only use up an airjump if we can increase our velocity.
      If our upwards velocity is currently greater than our jmp_force, don't use the airjump */
   }else if(airjumps &lt; max_airjumps &amp;&amp; vspd &gt; -jmp_force){
@@ -121,19 +119,121 @@ if(keyboard_check_released(ord('D'))){
   hspd -= spd;
 }
 
-if(grounded){
-    if(hspd == 0){
-        if(sprite_index != spr_player_idle){
-            sprite_index = spr_player_idle;
-        }
-    }else if(sprite_index != spr_player_run){
-        sprite_index = spr_player_run;
-    }
-}
 
 // add gravity from vspd
 vspd += global.GRAV;
 
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// States
+
+if(grounded){
+  if(hspd == 0){
+    state = ePlayer_states.idle;
+   }else{
+     state = ePlayer_states.running;
+  }
+}else if(vspd &lt; 0){
+  state = ePlayer_states.jumping;        
+}else if(vspd &gt; 0){
+  state = ePlayer_states.falling;  
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Animation
+
+switch(state){
+
+  case ePlayer_states.idle:
+    sprite_index = spr_player_idle;
+    break; 
+    
+  case ePlayer_states.running:
+    sprite_index = spr_player_run;
+    break;
+    
+  case ePlayer_states.jumping: 
+    sprite_index = spr_player_jump;
+    image_speed = 0;
+    if(vspd &lt; -2){
+      image_index = 0;
+    }else if(vspd &lt; 2){
+      image_index = 1;
+    }
+    break;
+    
+  case ePlayer_states.falling:
+    sprite_index = spr_player_jump;
+    image_speed = 0;
+    if(vspd &gt;= 0){
+        image_index = 2;
+    }
+
+}
+
+// Change image direction depending on which direction we're moving
+if(sign(hspd) != 0){
+    image_xscale = sign(hspd);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Collision
 
 // horizontal collision
 if(place_meeting(x+hspd, y, obj_solid)){
