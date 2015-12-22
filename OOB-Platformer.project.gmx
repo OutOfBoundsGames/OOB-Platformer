@@ -8,6 +8,9 @@
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_player_idle</sprite>
+      <sprite>sprites\spr_player_run</sprite>
+      <sprite>sprites\spr_player_jump</sprite>
     </sprites>
     <sprites name="Terrain">
       <sprite>sprites\spr_floor</sprite>
