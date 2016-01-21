@@ -4,7 +4,10 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\bgm_hippie_dungeon_loop</sound>
+    <sound>sound\sfx_jumpx</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Player">
       <sprite>sprites\spr_player</sprite>
@@ -14,13 +17,20 @@
     </sprites>
     <sprites name="Terrain">
       <sprite>sprites\spr_floor</sprite>
+      <sprite>sprites\spr_solid</sprite>
+      <sprite>sprites\spr_torchglow</sprite>
     </sprites>
     <sprites name="Interactive">
       <sprite>sprites\spr_bumper_UP</sprite>
       <sprite>sprites\spr_bumper_DOWN</sprite>
+      <sprite>sprites\spr_torch</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_stoneplatform</background>
+    <background>background\bg_stonewall</background>
+    <background>background\bg_obstructions</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_player</object>
@@ -36,6 +46,8 @@
       <object>objects\obj__bumper_DOWN</object>
     </objects>
     <object>objects\obj_console</object>
+    <object>objects\obj_torch</object>
+    <object>objects\obj_torch_glow</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_initialize</room>
